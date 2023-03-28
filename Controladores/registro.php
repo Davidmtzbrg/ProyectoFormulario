@@ -13,11 +13,10 @@ $estatus1 = 'Enviado';
 
 include "conexion.php";
 
-echo "conexion";
 
 if ($_POST['subir']) {
 
-    echo "se preciono el boton";
+    
     //Este metodo es nuevo para se usa para agregar documentos a una base de datos.
 
     foreach ($_FILES["miarchivo"]['tmp_name'] as $key => $tmp_name) {
@@ -27,7 +26,7 @@ if ($_POST['subir']) {
             $archivonombre = $_FILES["miarchivo"]["name"][$key];
             $fuente = $_FILES["miarchivo"]["tmp_name"][$key];
 
-            $carpeta = 'archivos/'; //Declaramos el nombre de la carpeta que guardara los archivos
+            $carpeta = '../archivos'; //Declaramos el nombre de la carpeta que guardara los archivos
 
             if (!file_exists($carpeta)) {
                 mkdir($carpeta, 0777) or die("Hubo un error al crear el directorio de almacenamiento");
@@ -35,6 +34,7 @@ if ($_POST['subir']) {
 
             $dir = opendir($carpeta);
             $target_path = $carpeta . '/' . $archivonombre; //indicamos la ruta de destino de los archivos
+            move_uploaded_file($fuente,$carpeta.'/'. $archivonombre);
 
             closedir($dir); //Cerramos la conexion con la carpeta destino
         }
@@ -51,7 +51,6 @@ if ($conexion->query($insertar) == true) {
 } else {
     echo "No se guarado la informacion";
 }
-
 
 $conexion->close();
 

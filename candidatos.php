@@ -85,7 +85,7 @@
                                         <tr>
                                         <td>
                                                 <input type="checkbox" name="IdsUsuarios[]"
-                                                    value="<?php echo $registros['id_usuario'] ?>" required/>
+                                                    value="<?php echo $registros['id_usuario'] ?>" />
                                             </td>
                                         <td>
                                                 <?php echo mb_strtoupper($registros['id_usuario']); ?>

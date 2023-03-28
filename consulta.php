@@ -126,7 +126,8 @@
                                                 <?php echo mb_strtoupper($registros['rfc']); ?>
                                             </td>
                                             <td>
-                                                <?php echo $registros['ruta']; ?>
+                                                
+                                                <img src="<?php echo substr(($registros['ruta']),3) ?>" width="50" >
                                             </td>
                                             <td>
                                                 <?php echo mb_strtoupper($registros['estatus']); ?>

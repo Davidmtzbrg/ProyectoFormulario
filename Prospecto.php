@@ -8,8 +8,9 @@
     <!--css-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-         <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
 
     <section class="content">
@@ -20,7 +21,9 @@
                     <nav class="navbar navbar-expand-lg bg-light">
                         <div class="container-fluid">
                             <a class="navbar-brand" href="Prospecto.php">Registros</a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -52,42 +55,51 @@
                         </div>
                         <br>
                         <!-- #region <form class="row g-3 needs-validation" name="Formulario" id="Formulario" action="controladores/registro.php" method="post" > -->
-                        <form class="row g-3 needs-validation" action="controladores/registro.php" method="POST" enctype="multipart/form-data" >
+                        <form class="row g-3 needs-validation" action="controladores/registro.php" method="POST"
+                            enctype="multipart/form-data">
                             <div class="col-md-4">
                                 <label for="nombre" class="form-label">Nombre</label>
-                                <input autocomplete="off" type="text" class="form-control" name="nombre" id="nombre" required>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="ApellidoPaterno" class="form-label">Apellido Paterno</label>
-                                <input autocomplete="off" type="text" class="form-control" name="ApellidoPaterno" id="ApellidoPaterno"
+                                <input autocomplete="off" type="text" class="form-control" name="nombre" id="nombre"
                                     required>
                             </div>
                             <div class="col-md-4">
+                                <label for="ApellidoPaterno" class="form-label">Apellido Paterno</label>
+                                <input autocomplete="off" type="text" class="form-control" name="ApellidoPaterno"
+                                    id="ApellidoPaterno" required>
+                            </div>
+                            <div class="col-md-4">
                                 <label for="ApellidoMaterno" class="form-label">Apellido Materno</label>
-                                <input autocomplete="off" type="text" class="form-control" name="ApellidoMaterno" id="ApellidoMaterno">
+                                <input autocomplete="off" type="text" class="form-control" name="ApellidoMaterno"
+                                    id="ApellidoMaterno">
                             </div>
 
                             <div class="col-md-4">
                                 <label for="Calle" class="form-label">Calle</label>
-                                <input autocomplete="off" type="text" class="form-control" name="calle" id="Calle" required>
+                                <input autocomplete="off" type="text" class="form-control" name="calle" id="Calle"
+                                    required>
                             </div>
 
                             <div class="col-md-4">
                                 <label for="numero" class="form-label">Numero</label>
-                                <input autocomplete="off" type="text" class="form-control" name="numero" id="numero" required>
+                                <input autocomplete="off" type="text" class="form-control" name="numero" id="numero"
+                                    required>
                             </div>
 
                             <div class="col-md-4">
                                 <label for="colonia" class="form-label">Colonia</label>
-                                <input autocomplete="off" type="text" class="form-control" name="colonia" id="colonia" required>
+                                <input autocomplete="off" type="text" class="form-control" name="colonia" id="colonia"
+                                    required>
                             </div>
                             <div class="col-md-4">
                                 <label for="postal" class="form-label">Codigo Postal</label>
-                                <input autocomplete="off" type="text" class="form-control" name="postal" id="postal" required>
+                                <input autocomplete="off" type="text" class="form-control" name="postal" id="postal"
+                                    required>
                             </div>
                             <div class="col-md-4">
                                 <label for="telefono" class="form-label">Telefono</label>
-                                <input autocomplete="off" type="text" class="form-control" name="telefono" id="telefono" required  maxlength="10" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+                                <input autocomplete="off" type="text" class="form-control" name="telefono" id="telefono"
+                                    required maxlength="10"
+                                    oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
 
                             </div>
 
@@ -98,10 +110,18 @@
 
                             <div class="col-sm-8">
                                 <label for="documentos" class="form-label">Nombre Docuentos</label>
-                                <input autocomplete="off" type="text" class="form-control" name="documento" id="documeno" required>
+                                <input autocomplete="off" type="text" class="form-control" name="documento"
+                                    id="documeno" required>
                                 <br>
-                                <input type="file" class="form-control" id="miarchivo[]" name="miarchivo[]" aria-label="Archivo" multiple="">
+
                             </div>
+                            
+
+                            <div class="file-path input-field">
+                            <input type="file" class="form-control" id="miarchivo[]" name="miarchivo[]" multiple="">
+                            </div>
+
+
                             <!-- Se agrego el nombre del boton name-->
                             <div class="col-12">
                                 <input class="btn btn-primary" type="submit" name="subir" value="Enviar">
